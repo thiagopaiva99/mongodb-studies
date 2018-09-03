@@ -8,7 +8,7 @@ mongoose.connection
     .on('error', error => console.warn('Error', error));
 
 beforeEach(done => {
-    mongoose.connection.collection.users.drop(() => {
+    mongoose.connection.collections.users.drop(() => {
         done();
     });
 });
