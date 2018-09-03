@@ -7,6 +7,8 @@ mongoose.connection
     .once('open', () => console.log('Good to Go!'))
     .on('error', error => console.warn('Error', error));
 
-beforeEach(() => {
-    mongoose.connection.collection.users.drop();
+beforeEach(done => {
+    mongoose.connection.collection.users.drop(() => {
+        done();
+    });
 });
