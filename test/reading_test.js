@@ -14,7 +14,11 @@ describe('Readind users out of database', () => {
             .then(() => done())
     });
 
-    it('should find users with name Thiago', () => {
-
+    it('should find all users with name Thiago', done => {
+        User.find({
+            name: 'Thiago'
+        }).then(users => {
+            done();
+        });
     });
 });
