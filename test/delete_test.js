@@ -26,14 +26,24 @@ describe('Deleting a user', () => {
                 .then(user => {
                     assert(user === null);
                     done();
-                });;
+                });
     });
 
     it('should remove by class method findAndRemove', done => {
-
+        User.findOneAndRemove({ name: 'Thiago' })
+            .then(() => User.findOne({ name: 'Thiago' }))
+                .then(user => {
+                    assert(user === null);
+                    done();
+                });
     });
 
     it('should remove by class method findByIdAndRemove', done => {
-
+        User.findByIdAndRemove(thiago._id)
+            .then(() => User.findOne({ name: 'Thiago' }))
+                .then(user => {
+                    assert(user === null);
+                    done();
+                });
     });
 });
