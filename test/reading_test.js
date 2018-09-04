@@ -15,10 +15,10 @@ describe('Readind users out of database', () => {
     });
 
     it('should find all users with name Thiago', done => {
-        User.find({
-            name: 'Thiago'
-        }).then(users => {
-            done();
-        });
+        User.find({ name: 'Thiago' })
+            .then(users => {
+                assert(users[0]._id.toString() === thiago._id.toString());
+                done();
+            });
     });
 });
