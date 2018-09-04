@@ -10,4 +10,20 @@ describe('Deleting a user', () => {
         thiago.save()
             .then(() => done());
     });
+
+    it('should remove by model instance', () => {
+
+    });
+
+    it('should remove by class method', () => {
+
+    });
+
+    it('should remove by class method findAndRemove', () => {
+
+    });
+
+    it('should remove by class method findByIdAndRemove', () => {
+
+    });
 });
