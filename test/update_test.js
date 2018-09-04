@@ -37,4 +37,8 @@ describe('Updating records', () => {
     it('should update a model class with update', done => {
         assertName(User.findOneAndUpdate({ name: 'Thiago' }, { name: 'Thiagooo' }), done);
     });
+
+    it('should update a model class with update', done => {
+        assertName(User.findByIdAndUpdate(thiago._id, { name: 'Thiagooo' }), done);
+    });
 });
