@@ -21,4 +21,12 @@ describe('Readind users out of database', () => {
                 done();
             });
     });
+
+    it('should find a user with a particular id', done => {
+        User.findOne({ _id: thiago._id })
+            .then(user => {
+                assert(user.name === 'Thiago');
+                done();
+            });
+    });
 });
